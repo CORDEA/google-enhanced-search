@@ -30,6 +30,7 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'src/dist'),
     },
+    devtool: 'cheap-source-map',
     plugins: [
         new VueLoaderPlugin(),
     ]

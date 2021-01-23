@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "./src/dist/",
     "noImplicitAny": true,
     "removeComments": true,
     "allowJs": true,

@@ -1,0 +1,21 @@
+{
+  "name": "Google Enhanced Search",
+  "version": "0.0.1",
+  "description": "",
+  "background": {
+    "scripts": [
+      "dist/background.bundle.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_title": "Google Enhanced Search",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}

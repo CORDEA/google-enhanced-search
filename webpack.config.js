@@ -1,9 +1,10 @@
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
     entry: {
         background: './src/background.ts',
-        popup: './src/popup.ts'
+        popup: './src/popup.ts',
     },
     module: {
         rules: [
@@ -12,13 +13,23 @@ module.exports = {
                 use: 'babel-loader',
                 exclude: /node_modules/,
             },
+            {
+                test: /\.vue$/,
+                use: 'vue-loader',
+            },
         ],
     },
     resolve: {
         extensions: ['.ts', '.js'],
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js',
+        },
     },
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'src/dist'),
     },
+    plugins: [
+        new VueLoaderPlugin(),
+    ]
 };

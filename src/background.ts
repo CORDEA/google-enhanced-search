@@ -8,5 +8,10 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.contextMenus.onClicked.addListener((info) => {
   const url = info.linkUrl;
-  // TODO
+  if (!url) {
+    return;
+  }
+  chrome.browserAction.openPopup(window => {
+    window.render(url);
+  });
 })

@@ -12,7 +12,7 @@
 <template>
   <div>
     <div class="progress" role="progressbar" aria-label="Progress Bar"
-         aria-valuemin="0" aria-valuemax="1">
+         aria-valuemin="0" aria-valuemax="1" v-if="loading">
       <div class="mdc-circular-progress__determinate-container">
         <svg class="mdc-circular-progress__determinate-circle-graphic" viewBox="0 0 32 32"
              xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div v-else>
       {{ title }}
     </div>
   </div>
@@ -63,16 +63,19 @@ const PopupProps = Vue.extend({
 
 @Component
 export default class Popup extends PopupProps {
+  loading = true;
   title = '';
 
   mounted() {
     const progress = MDCCircularProgress.attachTo(document.querySelector('.progress'));
     progress.determinate = false;
 
+    this.loading = true;
     fetch(this.url)
         .then(response => response.text())
         .then(text => new DOMParser().parseFromString(text, 'text/html'))
-        .then(html => this.title = html.title);
+        .then(html => this.title = html.title)
+        .then(_ => this.loading = false);
   }
 }
 </script>

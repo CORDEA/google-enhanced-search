@@ -2,6 +2,11 @@
 @use "~@material/typography/mdc-typography";
 @use "~@material/circular-progress/mdc-circular-progress";
 
+.container {
+  min-width: 400px;
+  min-height: 150px;
+}
+
 .progress {
   @extend .mdc-circular-progress;
   width: 36px;
@@ -11,7 +16,7 @@
 </style>
 
 <template>
-  <div>
+  <div class="container">
     <div class="progress" role="progressbar" aria-label="Progress Bar"
          aria-valuemin="0" aria-valuemax="1" v-if="loading">
       <div class="mdc-circular-progress__determinate-container">

@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{ title }}
   </div>
 </template>
 
@@ -15,7 +16,13 @@ const PopupProps = Vue.extend({
 
 @Component
 export default class Popup extends PopupProps {
+  title = '';
+
   mounted() {
+    fetch(this.url)
+        .then(response => response.text())
+        .then(text => new DOMParser().parseFromString(text, 'text/html'))
+        .then(html => this.title = html.title);
   }
 }
 </script>

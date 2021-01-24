@@ -1,4 +1,5 @@
 <style lang="scss" scoped>
+@use "~@material/typography/mdc-typography";
 @use "~@material/circular-progress/mdc-circular-progress";
 
 .progress {
@@ -45,7 +46,9 @@
       </div>
     </div>
     <div v-else>
-      {{ title }}
+      <h6 class="mdc-typography--headline6">
+        {{ title }}
+      </h6>
     </div>
   </div>
 </template>

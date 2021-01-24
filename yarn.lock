@@ -905,6 +905,14 @@
   dependencies:
     "@material/feature-targeting" "^9.0.0"
 
+"@material/typography@^9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@material/typography/-/typography-9.0.0.tgz#c3299c8362d5b71b8fec1efe83330b9820c71500"
+  integrity sha512-+zyzGnV73d/RyG681L72hCnhd2fwwS9ErtEa3KESVJxVxKeuaaCpUJVDkOqg1C/e7tNX5n/GiU8KPwRPG2O9Jw==
+  dependencies:
+    "@material/feature-targeting" "^9.0.0"
+    "@material/theme" "^9.0.0"
+
 "@types/chrome@^0.0.128":
   version "0.0.128"
   resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.128.tgz#5dbd8b2539a367353fbe4386f119b510105f8b6a"

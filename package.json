@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@material/circular-progress": "^9.0.0",
+    "@material/typography": "^9.0.0",
     "vue": "^2.6.12",
     "vue-class-component": "^7.2.6"
   }

@@ -18,13 +18,20 @@ module.exports = {
                 test: /\.vue$/,
                 use: 'vue-loader',
             },
+            {
+                test: /\.scss$/,
+                use: [
+                    'vue-style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            esModule: false,
+                        },
+                    },
+                    'sass-loader',
+                ],
+            },
         ],
-    },
-    resolve: {
-        extensions: ['.ts', '.js'],
-        alias: {
-            'vue$': 'vue/dist/vue.esm.js',
-        },
     },
     output: {
         filename: '[name].bundle.js',
